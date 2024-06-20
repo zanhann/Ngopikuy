@@ -430,6 +430,54 @@ footer .credit a {
 /* Mobile */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 55%; /* Mengurangi ukuran font untuk perangkat seluler */
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--bg); /* Mengubah warna latar belakang menu */
+    width: 100%; /* Mengisi lebar layar dengan menu */
+    height: auto; /* Mengubah tinggi menu agar menyesuaikan konten */
+    display: flex;
+    flex-direction: column; /* Mengatur menu vertikal */
+    align-items: center; /* Menengahkan item-menu */
+    transition: right 0.3s ease; /* Efek transisi saat menu muncul */
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #fff; /* Warna teks menu */
+    display: block;
+    margin: 1rem 0; /* Jarak antar item-menu */
+    padding: 1rem 0; /* Ruang dalam item-menu */
+    font-size: 2rem;
+    text-align: center; /* Menengahkan teks pada menu */
+  }
+
+  .navbar .navbar-nav a::after {
+    display: none; /* Menghapus efek bawah pada menu */
+  }
+
+  .about .row,
+  .menu .row,
+  .contact .row {
+    flex-direction: column; /* Mengubah tata letak konten menjadi vertikal */
+  }
+
+  .about .row .about-img img {
+    width: 100%; /* Mengisi lebar gambar agar sesuai dengan layar */
+    max-width: 100%; /* Batasi lebar maksimum gambar */
+    height: auto; /* Biarkan ketinggian mengikuti lebar */
+    object-fit: cover; /* Menyembunyikan bagian gambar yang melebihi kotaknya */
+    object-position: center; /* Menengahkan gambar secara horizontal */
+  }
+
+  .about .row .content {
+    padding: 0; /* Hapus padding pada konten */
   }
 }
